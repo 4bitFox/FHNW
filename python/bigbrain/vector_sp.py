@@ -91,3 +91,12 @@ def shortest_line2point(g, u, symbol_t, P):
     closest_t = sp.solve(u.dot(gP), symbol_t)[0]
     P_closest = g.subs({symbol_t: closest_t})
     return P_closest
+
+def mirror_vec_with_vec(a, b):
+    """
+    mirrors a with the b vector and returns c
+    """
+    e_b = b/b.norm() # einheitsvektor b
+    b_a = e_b * a.dot(b)/b.norm() # anteil von a in richtung b
+    c = 2*b_a - a # a spiegeln um b
+    return c
