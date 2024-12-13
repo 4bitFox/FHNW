@@ -100,3 +100,12 @@ def mirror_vec_with_vec(a, b):
     b_a = e_b * a.dot(b)/b.norm() # anteil von a in richtung b
     c = 2*b_a - a # a spiegeln um b
     return c
+
+def line_intersection(g1, g2):
+    """
+    finds the point where two lines intersect
+    """
+    intersect = g1 - g2
+    intersect_solved = sp.solve(intersect)
+    P = g1.subs(intersect_solved)
+    return P
