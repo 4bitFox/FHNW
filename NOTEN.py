@@ -10,6 +10,7 @@ from tabulate import tabulate
 
 
 
+
 sem1 = {
         "pro1M": [[(5.5, 0.1), (5.8, 0.15)], [None]],
         "an1"  : [[4.6, 4.4], []],
@@ -78,5 +79,8 @@ def print_table(grades_dict, title = None):
 
     print(tabulate(table, headers=headers, tablefmt="grid", colalign=("left", "right", "right", "right")))
         
-grades_sem1 = grades(sem1)
-print_table(grades_sem1, "Sem. 1")
+    
+
+
+
+print_table(grades(sem1), "Sem. 1")
