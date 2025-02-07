@@ -9,20 +9,33 @@ Created on Mon Jan 13 10:38:58 2025
 from tabulate import tabulate
 
 
-
-
 sem1 = {
-        "pro1M": [[(5.5, 0.1), (5.8, 0.15), (4.9, 0.2), (5.3, 0.15), (5, 0.15)], [None]],
-        "an1"  : [[4.6, 4.4], []],
+        "pro1M": [[(5.5, 0.1, "Konzeptskizze"), (5.8, 0.15, "Sitzungsprotokolle"), (4.9, 0.2, "Reflexionsbericht"), (5.3, 0.15, "Fertigungszeichnung"), (5, 0.15, "Bericht Teil: Sprachkompetenz"), (4.8, 0.15, "Bericht Teil: Konstruktion"), (5.5, 0.1, "Präsentation")], [None]],
+        "an1"  : [[4.6, 4.4, (5.1, 1, "Bonus +0.2 Note für Python-Aufgabe Newton-Verfahren")], [4.9]],
         "mechM": [[5, 3.5, 5], []],
         "lalg1": [[4.2, 4.7], []],
-        "esfss": [[(5.58, 0.6), (5.35, 0.4)], [None]],
-        "AuA"  : [[(5.8, 0.5), (5.2, 0.2), (4.5, 0.3)], [None]],
-        "infM" : [[(6.1, 0.5), (5.4, 0.25), (5.6, 0.25)], [None]],
+        "esfss": [[(5.58, 0.6, "Presentation"), (5.35, 0.4, "Final Exam")], [None]],
+        "AuA"  : [[(5.8, 0.5, "1-Minuten-Rede"), (5.2, 0.2, "Analyse Auftritt"), (4.5, 0.3, "Podium")], [None]],
+        "infM" : [[(6.1, 0.5), (5.4, 0.25, "Projekt"), (5.6, 0.25, "Projekt")], [None]],
         "werk" : [[5.4], [None]],
         "ch1"  : [[4.5], []],
-        "hkon" : [[(4.65, 0.5), (6, 0.2)], [None]]
+        "hkon" : [[(4.65, 0.5, "Teil Herstellung"), (6, 0.2, "Teil Konstruktion Peergrading Zeichnung"), (4.6, 0.3, "Teil Konstruktion")], [None]]
         }
+
+
+sem2 = {
+        "pro2M": [[], [None]],
+        "thdM" : [[], []],
+        "an2"  : [[], []],
+        "lalg2": [[], [None]],
+        "chkL" : [[], [None]],
+        "stk"  : [[], [None]],
+        "wisa" : [[], [None]],
+        "wus"  : [[], []],
+        "mel"  : [[], [None]],
+        "eidpe": [[], [None]],
+        "werk2": [[], []],
+       }
 
 
 
@@ -63,24 +76,24 @@ def grades(semester):
             averages.append(average_final_exam)
             
         if len(averages) != 0:
-            average_total = sum(averages)
+            average_total = sum(averages) / len(averages)
         else:
             average_total = None
         
         results[module] = (average_semester, average_final_exam, average_total)
     return results
 
-def print_table(grades_dict, title = None):
+def print_table(results_dict, title = None):
     if title == None:
         title = "Modul"
     
-    table = [(key, *value) for key, value in grades_dict.items()]
+    table = [(key, *value) for key, value in results_dict.items()]
     headers = [title, "Erfa", "MSP", "Final"]
 
     print(tabulate(table, headers=headers, tablefmt="grid", colalign=("left", "right", "right", "right")))
-        
     
 
 
 
 print_table(grades(sem1), "Sem. 1")
+print_table(grades(sem2), "Sem. 2")
