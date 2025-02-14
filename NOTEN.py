@@ -6,19 +6,20 @@ Created on Mon Jan 13 10:38:58 2025
 @author: cvetkofabian
 """
 
+
 from tabulate import tabulate
 
 
 sem1 = {
         "pro1M": [[(5.5, 0.1, "Konzeptskizze"), (5.8, 0.15, "Sitzungsprotokolle"), (4.9, 0.2, "Reflexionsbericht"), (5.3, 0.15, "Fertigungszeichnung"), (5, 0.15, "Bericht Teil: Sprachkompetenz"), (4.8, 0.15, "Bericht Teil: Konstruktion"), (5.5, 0.1, "Präsentation")], [None]],
         "an1"  : [[4.6, 4.4, (5.1, 1, "Bonus +0.2 Note für Python-Aufgabe Newton-Verfahren")], [4.9]],
-        "mechM": [[5, 3.5, 5], []],
-        "lalg1": [[4.2, 4.7], []],
+        "mechM": [[5, 3.5, 5], [5.2]],
+        "lalg1": [[4.2, 4.7], [4.7]],
         "esfss": [[(5.58, 0.6, "Presentation"), (5.35, 0.4, "Final Exam")], [None]],
         "AuA"  : [[(5.8, 0.5, "1-Minuten-Rede"), (5.2, 0.2, "Analyse Auftritt"), (4.5, 0.3, "Podium")], [None]],
         "infM" : [[(6.1, 0.5), (5.4, 0.25, "Projekt"), (5.6, 0.25, "Projekt")], [None]],
         "werk" : [[5.4, 4.8], [None]],
-        "ch1"  : [[4.5], []],
+        "ch1"  : [[4.5], [4.3]],
         "hkon" : [[(4.65, 0.5, "Teil Herstellung"), (6, 0.2, "Teil Konstruktion Peergrading Zeichnung"), (4.6, 0.3, "Teil Konstruktion")], [None]]
         }
 
@@ -40,6 +41,10 @@ sem2 = {
 
 
 
+def round_half_up(number, decimals=0):
+    multiplier = 10**decimals
+    return int(number * multiplier + 0.5) / multiplier
+
 def average(grades, round_average = False):
     if grades == [] or grades == [None] or grades == None:
         return None
@@ -56,7 +61,7 @@ def average(grades, round_average = False):
     weight_total = sum(grades_weights)
     average = sum(grades_weighted) * 1/weight_total
     if round_average != False:
-        return round(average, round_average)
+        return round_half_up(average, round_average)
     return average
 
 def grades(semester):
@@ -76,7 +81,7 @@ def grades(semester):
             averages.append(average_final_exam)
             
         if len(averages) != 0:
-            average_total = sum(averages) / len(averages)
+            average_total = round_half_up(sum(averages) / len(averages), 1)
         else:
             average_total = None
         
