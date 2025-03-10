@@ -34,7 +34,7 @@ sem2 = {
         "wisa" : [[], [None]],
         "wus"  : [[], []],
         "mel"  : [[], [None]],
-        "eidpe": [[], [None]],
+        "eidpe": [[(6, 0.1)], [None]],
         "werk2": [[], []],
        }
 
