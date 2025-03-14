@@ -21,10 +21,9 @@ def fixed_point(A, b):
     eye = sp.eye(A.shape[0])
     eyeA = eye - A
     eyeAb = eyeA.row_join(b)
-    eyeA_inv = eyeA.inv()
-    det = eyeA_inv.det
+    det = eyeA.det()
     if det != 0:
-        x_F = eyeA_inv * b
+        x_F = eyeA.inv() * b
         return x_F
     elif eyeA.rank() != eyeAb.rank():
         print("Existiert kein x_F!!!")
