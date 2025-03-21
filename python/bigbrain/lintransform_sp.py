@@ -72,6 +72,8 @@ def rotatation_matrix(angle, axis = None):
         rot_M = sp.Matrix([[ c,  0,  s], 
                            [ 0,  1,  0], 
                            [-s,  0,  c]])
+    else:
+        raise Exception("axis has to be NoneType (default), 'x', 'y' or 'z'")
     return rot_M
 
 def rotate(M, angle, rotation_point = sp.zeros(2, 1), axis = None):
