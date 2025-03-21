@@ -78,12 +78,14 @@ def rotation_matrix(angle, axis = None):
         raise ValueError("axis has to be NoneType (default), 'x', 'y' or 'z'!")
     return rot_M
 
-def rotate(M, angle, rotation_point = sp.zeros(2, 1), axis = None):
+def rotate(M, angle, rotation_point = None, axis = None):
     """
     rotate M at with a given angle. 
     If a rotation point is given, M will be rotated around it.
     If axis isn't specified, M is assumed to be 2D. Otherwise rotation will take place around the specified axis x, y, or z and M is assumed to be 3D.
     """
+    if rotation_point == None:
+        rotation_point = sp.zeros(M.shape[0], 1)
     M_amount_vectors = M.shape[1]
     if M_amount_vectors != 1: # broadcast if matrix with hstacked vectors
         rotation_point = hduplicate(rotation_point, M_amount_vectors)
