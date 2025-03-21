@@ -8,6 +8,9 @@ Created on Fri Mar  7 11:34:42 2025
 
 import sympy as sp
 
+def hduplicate(vec, n):
+    M = vec * sp.ones(1, n)
+    return M
 
 def coeff_matrix(P, Q):
     A = Q*P.inv()
@@ -31,3 +34,16 @@ def fixed_point(A, b):
     else:
         print("Exisiteren unendlich x_F!!!")
         return eyeAb.rref()[0]
+
+def rotatation_matrix(angle):
+    s = sp.sin(angle)
+    c = sp.cos(angle)
+    rot_M = sp.Matrix([[c, -s], [s, c]])
+    return rot_M
+
+def rotate_2D(M, angle, rotation_point = sp.zeros(2, 1)):
+    M_amount_vectors = M.shape[1]
+    if M_amount_vectors != 1: # broadcast if matrix with hstacked vectors
+        rotation_point = hduplicate(rotation_point, M_amount_vectors)
+    rotated = rotatation_matrix(angle) * (M - rotation_point) + rotation_point
+    return rotated
