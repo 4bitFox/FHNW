@@ -12,6 +12,8 @@ def hduplicate(vec, n):
     """
     returns matrix with vector repeated horizontally n times.
     """
+    if vec.shape[1] != 1:
+        raise ValueError("vec has to be a column vector!")
     M = vec * sp.ones(1, n)
     return M
 
@@ -73,7 +75,7 @@ def rotation_matrix(angle, axis = None):
                            [ 0,  1,  0], 
                            [-s,  0,  c]])
     else:
-        raise Exception("axis has to be NoneType (default), 'x', 'y' or 'z'")
+        raise ValueError("axis has to be NoneType (default), 'x', 'y' or 'z'!")
     return rot_M
 
 def rotate(M, angle, rotation_point = sp.zeros(2, 1), axis = None):
