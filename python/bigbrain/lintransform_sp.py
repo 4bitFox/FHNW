@@ -17,6 +17,20 @@ def hduplicate(vec, n):
     M = vec * sp.ones(1, n)
     return M
 
+def hsplit(M):
+    """
+    split M into column vectors
+    """
+    vectors = []
+    for vector_index in range(M.shape[1]):
+        components = []
+        for row in range(M.shape[0]):
+            components.append(M[row, vector_index])
+        vector = sp.Matrix([components]).T
+        vectors.append(vector)
+    return tuple(vectors)
+            
+
 def coeff_matrix(P, Q):
     """
     Returns the coefficeint matrix of P -> Q
