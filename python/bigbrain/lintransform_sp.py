@@ -49,7 +49,7 @@ def fixed_point(A, b):
         print("Exisiteren unendlich x_F!!!")
         return eyeAb.rref()[0]
 
-def rotatation_matrix(angle, axis = None):
+def rotation_matrix(angle, axis = None):
     """
     Calculate the rotation matrix with a given angle
     if axis is not defined, 2 dimensions are assumed
@@ -85,5 +85,5 @@ def rotate(M, angle, rotation_point = sp.zeros(2, 1), axis = None):
     M_amount_vectors = M.shape[1]
     if M_amount_vectors != 1: # broadcast if matrix with hstacked vectors
         rotation_point = hduplicate(rotation_point, M_amount_vectors)
-    rotated = rotatation_matrix(angle, axis) * (M - rotation_point) + rotation_point
+    rotated = rotation_matrix(angle, axis) * (M - rotation_point) + rotation_point
     return rotated
