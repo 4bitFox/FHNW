@@ -45,10 +45,10 @@ def fixed_point(A, b):
         x_F = eyeA.inv() * b
         return x_F
     elif eyeA.rank() != eyeAb.rank():
-        print("Existiert kein x_F!!!")
+        print("No fixed point x_F exists!")
         return None
     else:
-        print("Exisiteren unendlich x_F!!!")
+        print("Infinite fixed points x_F exist!")
         return eyeAb.rref()[0]
 
 def rotation_matrix(angle, axis = None):
