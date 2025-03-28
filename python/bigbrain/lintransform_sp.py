@@ -29,7 +29,6 @@ def hsplit(M):
         vector = sp.Matrix([components]).T
         vectors.append(vector)
     return tuple(vectors)
-            
 
 def coeff_matrix(P, Q):
     """
@@ -105,3 +104,25 @@ def rotate(M, angle, rotation_point = None, axis = None):
         rotation_point = hduplicate(rotation_point, M_amount_vectors)
     rotated = rotation_matrix(angle, axis) * (M - rotation_point) + rotation_point
     return rotated
+
+def mirror_2D(M, angle = 0):
+    """
+    Mirror M around a line with angle relative to the X-axis.
+    If angle is not defined (angle=0), it will mirror around X-axis.
+    """
+    
+    s = sp.sin(2*angle)
+    c = sp.cos(2*angle)
+    
+    mirror_M = sp.Matrix([[c,  s], 
+                          [s, -c]])
+    M_mirrored = mirror_M * M
+    return M_mirrored
+
+def mirror_3D(M, n): #####################NOT_TESTED###########################
+    """
+    Mirror M with a plane normal.
+    """
+    mirror_M = sp.eye(3) - ((2*n*n.T) / n.norm()**2)
+    M_mirrored = mirror_M * M
+    return M_mirrored
