@@ -18,11 +18,11 @@ def lines_between_hstacked_points(M):
         plt.plot( [M[0,i] for i in range(M.shape[1])], [M[1,i] for i in range(M.shape[1])])
         plt.grid(True)
     elif M.shape[0] == 3:
-        plt_3D( [M[0,i] for i in range(M.shape[1])], [M[1,i] for i in range(M.shape[1])], [M[2,i] for i in range(M.shape[1])])
+        plot_3D( [M[0,i] for i in range(M.shape[1])], [M[1,i] for i in range(M.shape[1])], [M[2,i] for i in range(M.shape[1])])
     else:
         raise Exception("Can only plot 2D or 3D!")
     
-def plt_3D(x = None, y = None, z = None):
+def plot_3D(x = None, y = None, z = None):
     fig = plt.figure()
     ax = fig.add_subplot(projection="3d")
     
