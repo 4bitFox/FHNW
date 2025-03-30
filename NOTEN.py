@@ -25,7 +25,7 @@ sem1 = {
 
 
 sem2 = {
-        "pro2M": [[], [None]],
+        "pro2M": [[(5.75, 0.1, "Sitzungsmoderation")], [None]],
         "thdM" : [[], []],
         "an2"  : [[], []],
         "lalg2": [[], [None]],
