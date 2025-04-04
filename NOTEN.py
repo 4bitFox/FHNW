@@ -15,7 +15,7 @@ sem1 = {
         "an1"  : [[4.6, 4.4, (5.1, 1, "Bonus +0.2 Note für Python-Aufgabe Newton-Verfahren")], [4.9]],
         "mechM": [[5, 3.5, 5], [5.2]],
         "lalg1": [[4.2, 4.7], [4.7]],
-        "esfss": [[(5.58, 0.6, "Presentation"), (5.35, 0.4, "Final Exam")], [None]],
+        "esfss": [[(5.58, 0.6, "Präsentation"), (5.35, 0.4, "Final Exam")], [None]],
         "AuA"  : [[(5.8, 0.5, "1-Minuten-Rede"), (5.2, 0.2, "Analyse Auftritt"), (4.5, 0.3, "Podium")], [None]],
         "infM" : [[(6.1, 0.5), (5.4, 0.25, "Projekt"), (5.6, 0.25, "Projekt")], [None]],
         "werk" : [[5.4, 4.8], [None]],
@@ -33,7 +33,7 @@ sem2 = {
         "stk"  : [[], [None]],
         "wisa" : [[], [None]],
         "wus"  : [[3.8], []],
-        "mel"  : [[(3.32, 1)], [None]],
+        "mel"  : [[(3.5, 1)], [None]],
         "eidpe": [[(6, 0.1)], [None]],
         "werk2": [[], []],
        }
