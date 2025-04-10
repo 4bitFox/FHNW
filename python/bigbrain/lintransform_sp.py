@@ -69,6 +69,7 @@ def rotation_matrix(angle, axis = None):
     Calculate the rotation matrix with a given angle
     if axis is not defined, 2 dimensions are assumed
     if axis is defined as x, y, z, the matrix will be 3-dimensional
+    if axis is a vector, the vector will become the rotation axis
     """
     s = sp.sin(angle)
     c = sp.cos(angle)
@@ -88,7 +89,11 @@ def rotation_matrix(angle, axis = None):
                            [ 0,  1,  0], 
                            [-s,  0,  c]])
     else:
-        raise ValueError("axis has to be NoneType (default), 'x', 'y' or 'z'!")
+        p = axis
+        r, theta, phi = carthesian_to_spherical_coordinates(p)
+        R_Z = rotation_matrix(phi, "z")
+        R_Y = rotation_matrix(theta, "y")
+        rot_M = R_Z * R_Y * rotation_matrix(angle, "z") * R_Y.T * R_Z.T
     return rot_M
 
 def rotate(M, angle, rotation_point = None, axis = None):
@@ -143,3 +148,22 @@ def mirror_3D(M, n): #####################NOT_TESTED###########################
     mirror_M = mirror_matrix(plane_n = n)
     M_mirrored = mirror_M * M
     return M_mirrored
+
+def carthesian_to_spherical_coordinates(p):
+    """
+    Takes a vector p and returns r, theta and phi as a tuple
+    """
+    r = p.norm()
+    theta = sp.acos(p[2]/r)
+    phi = sp.atan(p[1]/p[0])
+    return r, theta, phi
+
+def sperical_to_carthesian_coordinates(r, theta, phi):
+    """
+    Takes r, tetha and phi and turns them into a carthesian vector
+    """
+    x = r*sp.sin(theta)*sp.cos(phi)
+    y = r*sp.sin(theta)*sp.sin(phi)
+    z = r*sp.cos(theta)
+    p = sp.Matrix([[x, y, z]]).T
+    return p
