@@ -93,7 +93,7 @@ def rotation_matrix(angle, axis = None):
 
 def rotate(M, angle, rotation_point = None, axis = None):
     """
-    rotate M at with a given angle. 
+    rotate M with a given angle. 
     If a rotation point is given, M will be rotated around it.
     If axis isn't specified, M is assumed to be 2D. Otherwise rotation will take place around the specified axis x, y, or z and M is assumed to be 3D.
     """
@@ -106,6 +106,10 @@ def rotate(M, angle, rotation_point = None, axis = None):
     return rotated
 
 def mirror_matrix(angle = 0, slope = None, plane_n = None):
+    """
+    Calculate mirror matrix with given angle, slope or normal vector of plane.
+    """
+    
     if slope != None:
         m = slope
         mirror_M = 1/(1+m**2) * sp.Matrix([[1-m**2, 2*m], [2*m, m**2-1]])
