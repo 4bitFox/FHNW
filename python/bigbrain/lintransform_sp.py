@@ -46,7 +46,7 @@ def transform(P, A, b = sp.zeros(2, 1)):
     Q = A * P + b
     return Q
     
-def fixed_point(A, b):
+def fixed_point(A, b = sp.zeros(2, 1)):
     """
     Try to find a fixed point
     """
