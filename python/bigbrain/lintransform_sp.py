@@ -105,17 +105,30 @@ def rotate(M, angle, rotation_point = None, axis = None):
     rotated = rotation_matrix(angle, axis) * (M - rotation_point) + rotation_point
     return rotated
 
-def mirror_2D(M, angle = 0):
+def mirror_matrix(angle = 0, slope = None, plane_n = None):
+    if slope != None:
+        m = slope
+        mirror_M = 1/(1+m**2) * sp.Matrix([[1-m**2, 2*m], [2*m, m**2-1]])
+    elif plane_n != None:
+        n = plane_n
+        mirror_M = sp.eye(3) - ((2*n*n.T) / n.norm()**2) #####################NOT_TESTED###########################
+    else:
+        s = sp.sin(2*angle)
+        c = sp.cos(2*angle)
+        mirror_M = sp.Matrix([[c,  s], 
+                              [s, -c]])
+    return mirror_M
+
+def mirror_2D(M, angle = 0, slope = None):
     """
     Mirror M around a line with angle relative to the X-axis.
     If angle is not defined (angle=0), it will mirror around X-axis.
     """
+    if slope == None:
+        mirror_M = mirror_matrix(angle = angle)
+    else:
+        mirror_M = mirror_matrix(slope = slope)
     
-    s = sp.sin(2*angle)
-    c = sp.cos(2*angle)
-    
-    mirror_M = sp.Matrix([[c,  s], 
-                          [s, -c]])
     M_mirrored = mirror_M * M
     return M_mirrored
 
@@ -123,6 +136,6 @@ def mirror_3D(M, n): #####################NOT_TESTED###########################
     """
     Mirror M with a plane normal.
     """
-    mirror_M = sp.eye(3) - ((2*n*n.T) / n.norm()**2)
+    mirror_M = mirror_matrix(plane_n = n)
     M_mirrored = mirror_M * M
     return M_mirrored
