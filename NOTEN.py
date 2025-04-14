@@ -7,7 +7,6 @@ Created on Mon Jan 13 10:38:58 2025
 """
 
 
-from tabulate import tabulate
 
 
 sem1 = {
@@ -45,6 +44,7 @@ def round_half_up(number, decimals=0):
     multiplier = 10**decimals
     return int(number * multiplier + 0.5) / multiplier
 
+
 def average(grades, round_average = False):
     if grades == [] or grades == [None] or grades == None:
         return None
@@ -63,6 +63,7 @@ def average(grades, round_average = False):
     if round_average != False:
         return round_half_up(average, round_average)
     return average
+
 
 def grades(semester):
     modules = list(semester.keys())
@@ -88,7 +89,12 @@ def grades(semester):
         results[module] = (average_semester, average_final_exam, average_total)
     return results
 
-def print_table(results_dict, title = None):
+
+
+
+def print_table_tabulate(results_dict, title = None):
+    from tabulate import tabulate
+    
     if title == None:
         title = "Modul"
     
@@ -96,9 +102,44 @@ def print_table(results_dict, title = None):
     headers = [title, "Erfa", "MSP", "Final"]
 
     print(tabulate(table, headers=headers, tablefmt="grid", colalign=("left", "right", "right", "right")))
+
+
+def print_table_rich(results_dict, title=None):
+    from rich.table import Table
+    from rich.console import Console
     
+    console = Console()
+    if title != None:
+        table = Table(title=title)
+
+    table.add_column("Modul", style="bold", justify="left")
+    table.add_column("Erfa", justify="right")
+    table.add_column("MSP", justify="right")
+    table.add_column("Final", justify="right")
+
+    def format_grade(val):
+        if val is None:
+            return "-"
+        if val < 3.75:
+            return f"[red]{val:.1f}[/red]"
+        elif val < 4.0:
+            return f"[yellow]{val:.1f}[/yellow]"
+        else:
+            return f"[green]{val:.1f}[/green]"
+
+    for modul, (erfa, msp, final) in results_dict.items():
+        table.add_row(
+            modul,
+            format_grade(erfa),
+            format_grade(msp),
+            format_grade(final)
+        )
+    
+    print("")
+    console.print(table)
 
 
 
-print_table(grades(sem1), "Sem. 1")
-print_table(grades(sem2), "Sem. 2")
+
+print_table_rich(grades(sem1), "Sem. 1")
+print_table_rich(grades(sem2), "Sem. 2")
