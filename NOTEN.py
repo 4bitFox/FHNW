@@ -119,7 +119,7 @@ def print_table_rich(results_dict, title=None):
 
     def format_grade(val):
         if val is None:
-            return "-"
+            return f"[gray]-[/gray]"
         if val < 3.75:
             return f"[red]{val:.1f}[/red]"
         elif val < 4.0:
@@ -127,14 +127,12 @@ def print_table_rich(results_dict, title=None):
         else:
             return f"[green]{val:.1f}[/green]"
 
-    for modul, (erfa, msp, final) in results_dict.items():
+    for module, (average_semester, average_final_exam, average_total) in results_dict.items():
         table.add_row(
-            modul,
-            format_grade(erfa),
-            format_grade(msp),
-            format_grade(final)
-        )
-    
+            module,
+            format_grade(average_semester),
+            format_grade(average_final_exam),
+            format_grade(average_total))
     print("")
     console.print(table)
 
