@@ -28,7 +28,7 @@ sem2 = {
         "thdM" : [[], []],
         "an2"  : [[4.9], []],
         "lalg2": [[], [None]],
-        "chkL" : [[], [None]],
+        "chkL" : [[(5.1, 0.25, "Chemie Schriftliche Prüfung")], [None]],
         "stk"  : [[5.18], [None]],
         "wisa" : [[], [None]],
         "wus"  : [[3.8], []],
@@ -119,7 +119,7 @@ def print_table_rich(results_dict, title=None):
 
     def format_grade(val):
         if val is None:
-            return f"[gray]-[/gray]"
+            return "-"
         if val < 3.75:
             return f"[red]{val:.1f}[/red]"
         elif val < 4.0:
