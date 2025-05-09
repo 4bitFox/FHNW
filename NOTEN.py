@@ -24,7 +24,7 @@ sem1 = {
 
 
 sem2 = {
-        "pro2M": [[(5.75, 0.1, "Sitzungsmoderation")], [None]],
+        "pro2M": [[(5.75, 0.1, "Sitzungsmoderation"), (4.5, 0.15, "Patentrecherche")], [None]],
         "thdM" : [[], []],
         "an2"  : [[4.9], []],
         "lalg2": [[5.2], [None]],
@@ -32,7 +32,7 @@ sem2 = {
         "stk"  : [[5.18], [None]],
         "wisa" : [[], [None]],
         "wus"  : [[3.8], []],
-        "mel"  : [[(3.5, 1), (3.88, 1.25)], [None]],
+        "mel"  : [[(3.5, 1), (3.87, 1)], [None]],
         "eidpe": [[(6, 0.1)], [None]],
         "werk2": [[], []],
        }
@@ -141,3 +141,6 @@ def print_table_rich(results_dict, title=None):
 
 print_table_rich(grades(sem1), "Sem. 1")
 print_table_rich(grades(sem2), "Sem. 2")
+
+
+input("\n\nPress Enter to quit...\n")
