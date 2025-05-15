@@ -34,7 +34,7 @@ sem2 = {
         "wus"  : [[3.8], []],
         "mel"  : [[(3.45, 1), (4.04, 1)], [None]],
         "eidpe": [[(6, 0.2, "Moodle Exercises"), (5.5, 0.4, "Poster and Canvas")], [None]],
-        "werk2": [[], []],
+        "werk2": [[3.7], []],
        }
 
 
