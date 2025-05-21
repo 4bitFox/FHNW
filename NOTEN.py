@@ -30,7 +30,7 @@ sem2 = {
         "lalg2": [[5.2], [None]],
         "chkL" : [[(5.1, 0.25, "Chemie Schriftliche Prüfung")], [None]],
         "stk"  : [[5.18], [None]],
-        "wisa" : [[], [None]],
+        "wisa" : [[5], [None]],
         "wus"  : [[3.8], []],
         "mel"  : [[(3.45, 1), (4.04, 1)], [None]],
         "eidpe": [[(6, 0.2, "Moodle Exercises"), (5.5, 0.4, "Poster and Canvas")], [None]],
