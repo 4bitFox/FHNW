@@ -26,14 +26,14 @@ sem1 = {
 sem2 = {
         "pro2M": [[(5.75, 0.1, "Sitzungsmoderation"), (4.5, 0.15, "Patentrecherche")], [None]],
         "thdM" : [[4.5], []],
-        "an2"  : [[4.9], []],
+        "an2"  : [[4.9, 4], []],
         "lalg2": [[5.2], [None]],
-        "chkL" : [[(5.1, 0.25, "Chemie Schriftliche Prüfung")], [None]],
+        "chkL" : [[(5.1, 0.25, "Chemie Schriftliche Prüfung"), (5.166, 0.125, "Chemiepräsentation")], [None]],
         "stk"  : [[5.18], [None]],
         "wisa" : [[5], [None]],
         "wus"  : [[3.8], []],
         "mel"  : [[(3.45, 1), (4.04, 1)], [None]],
-        "eidpe": [[(6, 0.2, "Moodle Exercises"), (5.5, 0.4, "Poster and Canvas")], [None]],
+        "eidpe": [[(6, 0.1, "Moodle Exercises"), (5.5, 0.4, "Poster and Canvas")], [None]],
         "werk2": [[3.7], []],
        }
 
@@ -143,4 +143,4 @@ print_table_rich(grades(sem1), "Sem. 1")
 print_table_rich(grades(sem2), "Sem. 2")
 
 
-input("\n\nPress Enter to quit...\n")
+# input("\n\nPress Enter to quit...\n")
