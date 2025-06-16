@@ -27,13 +27,13 @@ sem2 = {
         "pro2M": [[(5.75, 0.1, "Sitzungsmoderation"), (4.5, 0.15, "Patentrecherche")], [None]],
         "thdM" : [[4.5], []],
         "an2"  : [[4.9, 4], []],
-        "lalg2": [[5.2], [None]],
-        "chkL" : [[(5.1, 0.25, "Chemie Schriftliche Prüfung"), (5.166, 0.125, "Chemiepräsentation")], [None]],
+        "lalg2": [[(5.2, 2), (4.7, 1)], [None]],
+        "chkL" : [[(5.1, 0.25, "Chemie Schriftliche Prüfung"), (5.166, 0.125, "Chemiepräsentation"), (4.333, 0.125, "Chemie-Laborbericht"), (5, 0.5, "CADA-Challenge-und-Präsentation")], [None]],
         "stk"  : [[5.18], [None]],
         "wisa" : [[5], [None]],
-        "wus"  : [[3.8], []],
+        "wus"  : [[3.8, 4.8], []],
         "mel"  : [[(3.45, 1), (4.04, 1)], [None]],
-        "eidpe": [[(6, 0.1, "Moodle Exercises"), (5.5, 0.4, "Poster and Canvas")], [None]],
+        "eidpe": [[(6, 0.1, "Moodle Exercises"), (5.5, 0.4, "Poster and Canvas"), (4.5, 0.5, "Pitch")], [None]],
         "werk2": [[3.7], []],
        }
 
