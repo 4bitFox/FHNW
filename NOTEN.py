@@ -24,12 +24,12 @@ sem1 = {
 
 
 sem2 = {
-        "pro2M": [[(5.75, 0.1, "Sitzungsmoderation"), (4.5, 0.15, "Patentrecherche"), (4.8, 0.15, "Technischer Bericht Sprachkompetenz")], [None]],
+        "pro2M": [[(5.75, 0.1, "Sitzungsmoderation"), (4.5, 0.15, "Patentrecherche"), (4.8, 0.15, "Technischer Bericht Sprachkompetenz"), (4.9, 0.2, "Zeichnungssatz")], [None]],
         "thdM" : [[4.5], []],
-        "an2"  : [[4.9, 4, (5.06, 1, "Bonus +0.2 Note für Python-Aufgabe")], []],
+        "an2"  : [[4.9, 4, (5.06, 1, "Bonus +0.2 Note für Python-Aufgabe")], [4.3]],
         "lalg2": [[(5.2, 2), (4.7, 1)], [None]],
         "chkL" : [[(5.1, 0.25, "Chemie Schriftliche Prüfung"), (5.166, 0.125, "Chemiepräsentation"), (4.333, 0.125, "Chemie-Laborbericht"), (5, 0.5, "CADA-Challenge-und-Präsentation")], [None]],
-        "stk"  : [[5.18, 2.8], [None]],
+        "stk"  : [[5.18, 4.2], [None]],
         "wisa" : [[5], [None]],
         "wus"  : [[3.8, 4.8], []],
         "mel"  : [[(3.45, 1), (3.95, 1), (4.88, 1.25)], [None]],
