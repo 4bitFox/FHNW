@@ -31,10 +31,10 @@ sem2 = {
         "chkL" : [[(5.1, 0.25, "Chemie Schriftliche Prüfung"), (5.166, 0.125, "Chemiepräsentation"), (4.333, 0.125, "Chemie-Laborbericht"), (5, 0.5, "CADA-Challenge-und-Präsentation")], [None]],
         "stk"  : [[5.18, 4.2], [None]],
         "wisa" : [[5], [None]],
-        "wus"  : [[3.8, 4.8], []],
+        "wus"  : [[3.8, 4.8], [4]],
         "mel"  : [[(3.45, 1), (3.95, 1), (4.88, 1.25)], [None]],
         "eidpe": [[(6, 0.1, "Moodle Exercises"), (5.5, 0.4, "Poster and Canvas"), (4.5, 0.5, "Pitch")], [None]],
-        "werk2": [[3.7], []],
+        "werk2": [[3.72], [4.9]],
        }
 
 
