@@ -7,6 +7,7 @@ Created on Mon Jan 13 10:38:58 2025
 """
 
 
+TBD = None # Platzhalter
 
 
 sem1 = {
@@ -38,6 +39,18 @@ sem2 = {
        }
 
 
+sem3 = {
+        "pro3M": [[(5, 1, "Abgabe A"), (5, 1.5, "Abgabe B"), (TBD, 2.5, "Abgabe D (Einzelarbeit)"), (TBD, 2, "Abgabe E")], [None]],
+        "lean" : [[(TBD, 0.4, "Schriftliche Prüfung"), (TBD, 0.6, "Präsentation & Prozessdokumentation")], [None]],
+        "bplan": [[(TBD, 0.3, "Schriftliche Prüfung"), (TBD, 0.4, "Businessplan-Reasoning & Anhang"), (TBD, 0.3, "Elevator-Pitch & Q&A")], [None]],
+        "kmk"  : [[TBD, TBD], [None]],
+        "eltM" : [[(6, 0.15, "Labor 1"), (TBD, 0.7, "Schriftliche Prüfung"), (TBD, 0.15, "Labor 2")], [TBD]],
+        "elstk": [[TBD], [TBD]],
+        "num"  : [[5.5, TBD], [None]],
+        "flmM" : [[TBD], [TBD]]
+       }
+
+
 
 
 def round_half_up(number, decimals=0):
@@ -48,16 +61,22 @@ def round_half_up(number, decimals=0):
 def average(grades, round_average = False):
     if grades == [] or grades == [None] or grades == None:
         return None
-    
+
     grades_weighted = []
     grades_weights = []
     for grade in grades:
+        if grade is None:                 # None Platzhalter überspringen
+            continue
         if type(grade) == tuple:
+            if grade[0] is None:          # None Platzhalter überspringen
+                continue
             grades_weights.append(grade[1])
             grade = grade[0] * grade[1]
         else:
             grades_weights.append(1)
         grades_weighted.append(grade)
+    if sum(grades_weights) == 0:          # None Platzhalter überspringen: -> Schutz vor Division durch 0
+        return None
     weight_total = sum(grades_weights)
     average = sum(grades_weighted) * 1/weight_total
     if round_average != False:
@@ -71,21 +90,21 @@ def grades(semester):
     for module in modules:
         grades_semester = semester[module][0]
         grades_final_exam = semester[module][1]
-        
+
         average_semester = average(grades_semester, round_average=1)
         average_final_exam = average(grades_final_exam, round_average=1)
-        
+
         averages = []
         if average_semester != None:
             averages.append(average_semester)
         if average_final_exam != None:
             averages.append(average_final_exam)
-            
+
         if len(averages) != 0:
             average_total = round_half_up(sum(averages) / len(averages), 1)
         else:
             average_total = None
-        
+
         results[module] = (average_semester, average_final_exam, average_total)
     return results
 
@@ -93,30 +112,44 @@ def grades(semester):
 
 
 def print_table_tabulate(results_dict, title = None):
+    """
+    Ausgabe einer Tabelle.
+    Eingabe: grades(grades_dict), title="Titel"
+    """
     from tabulate import tabulate
-    
+
+    # Titel
     if title == None:
         title = "Modul"
-    
+
+    # Definition
     table = [(key, *value) for key, value in results_dict.items()]
     headers = [title, "Erfa", "MSP", "Final"]
 
+    # Ausgabe Tabelle in Konsole
     print(tabulate(table, headers=headers, tablefmt="grid", colalign=("left", "right", "right", "right")))
 
 
 def print_table_rich(results_dict, title=None):
+    """
+    Ausgabe einer formatierten Tabelle.
+    Eingabe: grades(grades_dict), title="Titel"
+    """
     from rich.table import Table
     from rich.console import Console
-    
+
+    # Titel
     console = Console()
     if title != None:
         table = Table(title=title)
 
+    # Spalten definieren
     table.add_column("Modul", style="bold", justify="left")
     table.add_column("Erfa", justify="right")
     table.add_column("MSP", justify="right")
     table.add_column("Final", justify="right")
 
+    # Mit Farben Formatieren
     def format_grade(val):
         if val is None:
             return "-"
@@ -127,20 +160,26 @@ def print_table_rich(results_dict, title=None):
         else:
             return f"[green]{val:.1f}[/green]"
 
+    # Tabellieren
     for module, (average_semester, average_final_exam, average_total) in results_dict.items():
         table.add_row(
             module,
             format_grade(average_semester),
             format_grade(average_final_exam),
             format_grade(average_total))
+
+    # Ausgabe Tabelle in Konsole
     print("")
     console.print(table)
 
 
 
 
+# Abruf Tabellen
 print_table_rich(grades(sem1), "Sem. 1")
 print_table_rich(grades(sem2), "Sem. 2")
+print_table_rich(grades(sem3), "Sem. 3")
+
 
 
 # input("\n\nPress Enter to quit...\n")
