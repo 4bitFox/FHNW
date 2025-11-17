@@ -45,7 +45,7 @@ sem3 = {
         "bplan": [[(TBD, 0.3, "Schriftliche Prüfung"), (TBD, 0.4, "Businessplan-Reasoning & Anhang"), (TBD, 0.3, "Elevator-Pitch & Q&A")], [None]],
         "kmk"  : [[4.8, TBD], [None]],
         "eltM" : [[(6, 0.15, "Labor 1"), (TBD, 0.7, "Schriftliche Prüfung"), (TBD, 0.15, "Labor 2")], [TBD]],
-        "elstk": [[TBD], [TBD]],
+        "elstk": [[4.2], [TBD]],
         "num"  : [[5.5, TBD], [None]],
         "flmM" : [[TBD], [TBD]]
        }
