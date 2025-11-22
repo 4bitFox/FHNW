@@ -44,7 +44,7 @@ sem3 = {
         "lean"  : [[(5.8, 0.4, "Schriftliche Prüfung"), (TBD, 0.6, "Präsentation & Prozessdokumentation")], [None]],
         "bplan" : [[(5.8, 0.3, "Schriftliche Prüfung"), (TBD, 0.4, "Businessplan-Reasoning & Anhang"), (TBD, 0.3, "Elevator-Pitch & Q&A")], [None]],
         "kmk"   : [[4.8, TBD], [None]],
-        "eltM"  : [[(6, 0.15, "Labor 1"), (TBD, 0.7, "Schriftliche Prüfung"), (TBD, 0.15, "Labor 2")], [TBD]],
+        "eltM"  : [[(6, 0.15, "Labor 1"), (4.3, 0.7, "Schriftliche Prüfung"), (TBD, 0.15, "Labor 2")], [TBD]],
         "elstk" : [[4.2], [TBD]],
         "num"   : [[5.5, TBD], [None]],
         "flmM"  : [[TBD], [TBD]]
@@ -166,9 +166,9 @@ def print_table_rich(results_dict, title=None):
         table = Table(title=title)
 
     # Spalten definieren
-    table.add_column("Modul", style="bold", justify="left")
-    table.add_column("Erfa", justify="right")
-    table.add_column("MSP", justify="right")
+    table.add_column("Modul  ", style="bold", justify="left")
+    table.add_column("Erfa ", justify="right")
+    table.add_column("MSP  ", justify="right")
     table.add_column("Final", justify="right")
 
     # Mit Farben Formatieren
