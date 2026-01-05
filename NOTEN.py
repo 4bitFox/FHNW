@@ -40,14 +40,14 @@ sem2 = {
 
 
 sem3 = {
-        "pro3M" : [[(5, 1, "Abgabe A"), (5, 1.5, "Abgabe B"), (TBD, 2.5, "Abgabe D (Einzelarbeit)"), (TBD, 2, "Abgabe E")], [None]],
+        "pro3M" : [[(5, 1, "Abgabe A"), (5, 1.5, "Abgabe B"), (5.1, 2.5, "Abgabe D (Einzelarbeit)"), (5, 2, "Abgabe E")], [None]],
         "lean"  : [[(5.8, 0.4, "Schriftliche Prüfung"), (TBD, 0.6, "Präsentation & Prozessdokumentation")], [None]],
         "bplan" : [[(5.8, 0.3, "Schriftliche Prüfung"), (TBD, 0.4, "Businessplan-Reasoning & Anhang"), (TBD, 0.3, "Elevator-Pitch & Q&A")], [None]],
-        "kmk"   : [[4.8, TBD], [None]],
+        "kmk"   : [[4.8, 3.5], [None]],
         "eltM"  : [[(6, 0.15, "Labor 1"), (4.3, 0.7, "Schriftliche Prüfung"), (TBD, 0.15, "Labor 2")], [TBD]],
         "elstk" : [[4.2], [TBD]],
         "num"   : [[5.5, TBD], [None]],
-        "flmM"  : [[TBD], [TBD]]
+        "flmM"  : [[3], [TBD]]
        }
 
 sem4 = {
