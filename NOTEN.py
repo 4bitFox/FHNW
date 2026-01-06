@@ -46,7 +46,7 @@ sem3 = {
         "kmk"   : [[4.8, 3.5], [None]],
         "eltM"  : [[(6, 0.15, "Labor 1"), (4.3, 0.7, "Schriftliche Prüfung"), (TBD, 0.15, "Labor 2")], [TBD]],
         "elstk" : [[4.2], [TBD]],
-        "num"   : [[5.5, TBD], [None]],
+        "num"   : [[5.5, 3.3], [None]],
         "flmM"  : [[3], [TBD]]
        }
 
