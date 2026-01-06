@@ -52,10 +52,15 @@ sem3 = {
 
 sem4 = {
         "pro4M" : [[], [None]],
-        "md"    : [[], []],
+        "md"    : [[], [TBD]],
         "fems"  : [[], [None]],
-        "rtL"   : [[], [None]]
-        # TBD
+        "atL"   : [[], [None]],
+        "egts"  : [[], [TBD]],
+        "man"   : [[], [TBD]],
+        "wst"   : [[], [TBD]],
+        "ffup"  : [[], [None]],
+        "ereth" : [[], [None]],
+        "rukg"  : [[], [None]]
        }
 
 sem5 = {
@@ -201,8 +206,8 @@ def print_table_rich(results_dict, title=None):
 print_table_rich(grades(sem1), "Sem. 1")
 print_table_rich(grades(sem2), "Sem. 2")
 print_table_rich(grades(sem3), "Sem. 3")
-"""
 print_table_rich(grades(sem4), "Sem. 4")
+"""
 print_table_rich(grades(sem5), "Sem. 5")
 print_table_rich(grades(sem6), "Sem. 6")
 print_table_rich(grades(sem7), "Sem. 7")
