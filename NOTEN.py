@@ -10,8 +10,7 @@ Created on Mon Jan 13 10:38:58 2025
 TBD = None # Platzhalter
 
 
-sem1 = {
-        "pro1M" : [[(5.5, 0.1, "Konzeptskizze"), (5.8, 0.15, "Sitzungsprotokolle"), (4.9, 0.2, "Reflexionsbericht"), (5.3, 0.15, "Fertigungszeichnung"), (5, 0.15, "Bericht Teil: Sprachkompetenz"), (4.8, 0.15, "Bericht Teil: Konstruktion"), (5.5, 0.1, "Präsentation")], [None]],
+sem1 = {"pro1M" : [[(5.5, 0.1, "Konzeptskizze"), (5.8, 0.15, "Sitzungsprotokolle"), (4.9, 0.2, "Reflexionsbericht"), (5.3, 0.15, "Fertigungszeichnung"), (5, 0.15, "Bericht Teil: Sprachkompetenz"), (4.8, 0.15, "Bericht Teil: Konstruktion"), (5.5, 0.1, "Präsentation")], [None]],
         "an1"   : [[4.6, 4.4, (5.1, 1, "Bonus +0.2 Note für Python-Aufgabe Newton-Verfahren")], [4.9]],
         "mechM" : [[5, 3.5, 5], [5.2]],
         "lalg1" : [[4.2, 4.7], [4.7]],
@@ -24,8 +23,7 @@ sem1 = {
         }
 
 
-sem2 = {
-        "pro2M" : [[(5.75, 0.1, "Sitzungsmoderation"), (4.5, 0.15, "Patentrecherche"), (4.8, 0.15, "Technischer Bericht Sprachkompetenz"), (4.9, 0.2, "Zeichnungssatz")], [None]],
+sem2 = {"pro2M" : [[(5.75, 0.1, "Sitzungsmoderation"), (4.5, 0.15, "Patentrecherche"), (4.8, 0.15, "Technischer Bericht Sprachkompetenz"), (4.9, 0.2, "Zeichnungssatz")], [None]],
         "thdM"  : [[4.5], [3.5]],
         "an2"   : [[4.9, 4, (5.06, 1, "Bonus +0.2 Note für Python-Aufgabe")], [4.3]],
         "lalg2" : [[(5.2, 2), (4.7, 1)], [None]],
@@ -36,11 +34,11 @@ sem2 = {
         "mel"   : [[(3.45, 1), (3.95, 1), (4.88, 1.25)], [None]],
         "eidpe" : [[(6, 0.1, "Moodle Exercises"), (5.5, 0.4, "Poster and Canvas"), (4.5, 0.5, "Pitch")], [None]],
         "werk2" : [[3.72], [4.9]],
+        "ecae"  : [[None], [None], 4] # 4 ECTS angerechnet durch C1 Zertifikat
        }
 
 
-sem3 = {
-        "pro3M" : [[(5, 1, "Abgabe A"), (5, 1.5, "Abgabe B"), (5.1, 2.5, "Abgabe D (Einzelarbeit)"), (5, 2, "Abgabe E")], [None]],
+sem3 = {"pro3M" : [[(5, 1, "Abgabe A"), (5, 1.5, "Abgabe B"), (5.1, 2.5, "Abgabe D (Einzelarbeit)"), (5, 2, "Abgabe E")], [None]],
         "lean"  : [[(5.8, 0.4, "Schriftliche Prüfung"), (TBD, 0.6, "Präsentation & Prozessdokumentation")], [None]],
         "bplan" : [[(5.8, 0.3, "Schriftliche Prüfung"), (TBD, 0.4, "Businessplan-Reasoning & Anhang"), (TBD, 0.3, "Elevator-Pitch & Q&A")], [None]],
         "kmk"   : [[4.8, 3.5], [None]],
@@ -50,8 +48,7 @@ sem3 = {
         "flmM"  : [[3], [TBD]]
        }
 
-sem4 = {
-        "pro4M" : [[], [None]],
+sem4 = {"pro4M" : [[], [None]],
         "md"    : [[], [TBD]],
         "fems"  : [[], [None]],
         "atL"   : [[], [None]],
@@ -63,18 +60,15 @@ sem4 = {
         "rukg"  : [[], [None]]
        }
 
-sem5 = {
-        "pro5M" : [[], [None]]
+sem5 = {"pro5M" : [[], [None]]
         # TBD
        }
 
-sem6 = {
-        "pro6Ma": [[], [None]]
+sem6 = {"pro6Ma": [[], [None]]
         # TBD
        }
 
-sem7 = {
-        # TBD
+sem7 = {# TBD
        }
 
 
