@@ -67,11 +67,8 @@ sem5 = {"pro5M" : [[], [None], 6]
         # TBD
        }
 
-sem6 = {"pro6Ma": [[], [None], 6]
+sem6 = {"pro6Ma": [[], [None], 12]
         # TBD
-       }
-
-sem7 = {# TBD
        }
 
 
@@ -151,7 +148,7 @@ def grades(semester):
         results[module] = (average_semester, average_final_exam, average_total, ects_final)
 
     grades_final_average = average(grades_final)
-    return results, grades_final_average, (ects_total_positive, ects_total_negative)
+    return results, (grades_final_average, grades_final), (ects_total_positive, ects_total_negative)
 
 
 def total_stats(grades_tuple):
@@ -159,17 +156,17 @@ def total_stats(grades_tuple):
     ects_positive = []
     ects_negative = []
     for grades_sem in grades_tuple:
-        grades_sem_final_average = grades_sem[1]
+        grades_sem_final = grades_sem[1][1]
         grades_sem_ects_total = grades_sem[2]
         grades_sem_ects_total_positive = grades_sem_ects_total[0]
         grades_sem_ects_total_negative = grades_sem_ects_total[1]
 
-        grades_final.append(grades_sem_final_average)
+        grades_final.extend(grades_sem_final)
         ects_positive.append(grades_sem_ects_total_positive)
         ects_negative.append(grades_sem_ects_total_negative)
-        total_average_grade = sum(grades_final) / len(grades_final)
-        total_ects_positive = sum(ects_positive)
-        total_ects_negative = sum(ects_negative)
+    total_ects_positive = sum(ects_positive)
+    total_ects_negative = sum(ects_negative)
+    total_average_grade = sum(grades_final) / len(grades_final)
     return total_average_grade, total_ects_positive, total_ects_negative
 
 
@@ -183,8 +180,10 @@ def print_table_sem(results, title=None):
     """
 
     results_dict = results[0]
-    grades_final_average = results[1]
+    grades_final_average = results[1][0]
     ects_total = results[2]
+    ects_total_positive = ects_total[0]
+    ects_total_negative = ects_total[1]
 
     # Titel
     console = Console()
@@ -236,14 +235,14 @@ def print_table_sem(results, title=None):
         "",
         "",
         format_grade(grades_final_average),
-        f"[green]{ects_total[0]}[/green]")
+        f"[green]{ects_total_positive}[/green]")
 
     table.add_row(
         "",
         "",
         "",
         "",
-        f"[red]{ects_total[1]}[/red]")
+        f"[red]{ects_total_negative}[/red]")
 
     # Ausgabe Tabelle in Konsole
     print("")
@@ -286,21 +285,26 @@ grades_sem3 = grades(sem3)
 print_table_sem(grades_sem3, "Sem. 3")
 grades_sem4 = grades(sem4)
 print_table_sem(grades_sem4, "Sem. 4")
-"""
 grades_sem5 = grades(sem5)
 print_table_sem(grades_sem5, "Sem. 5")
 grades_sem6 = grades(sem6)
 print_table_sem(grades_sem6, "Sem. 6")
-grades_sem7 = grades(sem7)
-print_table_sem
-(grades_sem7, "Sem. 7")
-"""
 
 
 
-grades_stats_tuple = grades_sem1, grades_sem2, grades_sem3
+
+# Abruf Übersicht
+grades_stats_tuple = (grades_sem1,
+                      grades_sem2,
+                      grades_sem3,
+                      grades_sem4,
+                      grades_sem5,
+                      grades_sem6
+                      )
 total_average_grade, total_ects_positive, total_ects_negative = total_stats(grades_stats_tuple)
 print_table_stats(total_average_grade, total_ects_positive, total_ects_negative, title=None)
+
+
 
 
 # input("\n\nPress Enter to quit...\n")
