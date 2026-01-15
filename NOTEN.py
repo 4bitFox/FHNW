@@ -6,6 +6,9 @@ Created on Mon Jan 13 10:38:58 2025
 @author: alya
 """
 
+from rich.table import Table
+from rich.console import Console
+
 
 TBD = None # Platzhalter
 
@@ -151,16 +154,33 @@ def grades(semester):
     return results, grades_final_average, (ects_total_positive, ects_total_negative)
 
 
+def total_stats(grades_tuple):
+    grades_final = []
+    ects_positive = []
+    ects_negative = []
+    for grades_sem in grades_tuple:
+        grades_sem_final_average = grades_sem[1]
+        grades_sem_ects_total = grades_sem[2]
+        grades_sem_ects_total_positive = grades_sem_ects_total[0]
+        grades_sem_ects_total_negative = grades_sem_ects_total[1]
+
+        grades_final.append(grades_sem_final_average)
+        ects_positive.append(grades_sem_ects_total_positive)
+        ects_negative.append(grades_sem_ects_total_negative)
+        total_average_grade = sum(grades_final) / len(grades_final)
+        total_ects_positive = sum(ects_positive)
+        total_ects_negative = sum(ects_negative)
+    return total_average_grade, total_ects_positive, total_ects_negative
 
 
 
-def print_table_rich(results, title=None):
+
+
+def print_table_sem(results, title=None):
     """
     Ausgabe einer formatierten Tabelle.
     Eingabe: grades(grades_dict), title="Titel"
     """
-    from rich.table import Table
-    from rich.console import Console
 
     results_dict = results[0]
     grades_final_average = results[1]
@@ -170,6 +190,8 @@ def print_table_rich(results, title=None):
     console = Console()
     if title != None:
         table = Table(title=title)
+    else:
+        table = Table(title="Semester Overview")
 
     # Spalten definieren
     table.add_column("Modul  ", style="bold", justify="left")
@@ -228,20 +250,57 @@ def print_table_rich(results, title=None):
     console.print(table)
 
 
+def print_table_stats(total_average_grade, total_ects_positive, total_ects_negative, title=None):
+    # Titel
+    console = Console()
+    if title != None:
+        table = Table(title=title)
+    else:
+        table = Table(title="Total Overview")
+
+    # Spalten definieren
+    table.add_column("TOR    ", style="bold", justify="left")
+    table.add_column(" ECTS positiv", justify="right")
+    table.add_column("ECTS negativ", justify="right")
+
+
+    table.add_row(
+        f"{total_average_grade:.2f}",
+        f"[green]{total_ects_positive}[/green]",
+        f"[red]{total_ects_negative}[/red]")
+
+
+    # Ausgabe Tabelle in Konsole
+    print("")
+    console.print(table)
+
+
 
 
 # Abruf Tabellen
-print_table_rich(grades(sem1), "Sem. 1")
-print_table_rich(grades(sem2), "Sem. 2")
-print_table_rich(grades(sem3), "Sem. 3")
-print_table_rich(grades(sem4), "Sem. 4")
+grades_sem1 = grades(sem1)
+print_table_sem(grades_sem1, "Sem. 1")
+grades_sem2 = grades(sem2)
+print_table_sem(grades_sem2, "Sem. 2")
+grades_sem3 = grades(sem3)
+print_table_sem(grades_sem3, "Sem. 3")
+grades_sem4 = grades(sem4)
+print_table_sem(grades_sem4, "Sem. 4")
 """
-print_table_rich(grades(sem5), "Sem. 5")
-print_table_rich(grades(sem6), "Sem. 6")
-print_table_rich(grades(sem7), "Sem. 7")
+grades_sem5 = grades(sem5)
+print_table_sem(grades_sem5, "Sem. 5")
+grades_sem6 = grades(sem6)
+print_table_sem(grades_sem6, "Sem. 6")
+grades_sem7 = grades(sem7)
+print_table_sem
+(grades_sem7, "Sem. 7")
 """
 
 
+
+grades_stats_tuple = grades_sem1, grades_sem2, grades_sem3
+total_average_grade, total_ects_positive, total_ects_negative = total_stats(grades_stats_tuple)
+print_table_stats(total_average_grade, total_ects_positive, total_ects_negative, title=None)
 
 
 # input("\n\nPress Enter to quit...\n")
