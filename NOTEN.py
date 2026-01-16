@@ -45,7 +45,7 @@ sem3 = {"pro3M" : [[(5, 1, "Abgabe A"), (5, 1.5, "Abgabe B"), (5.1, 2.5, "Abgabe
         "lean"  : [[(5.8, 0.4, "Schriftliche Prüfung"), (TBD, 0.6, "Präsentation & Prozessdokumentation")], [None], 2],
         "bplan" : [[(5.8, 0.3, "Schriftliche Prüfung"), (TBD, 0.4, "Businessplan-Reasoning & Anhang"), (TBD, 0.3, "Elevator-Pitch & Q&A")], [None], 2],
         "kmk"   : [[4.8, 3.5], [None], 3],
-        "eltM"  : [[(6, 0.15, "Labor 1"), (4.3, 0.7, "Schriftliche Prüfung"), (TBD, 0.15, "Labor 2")], [TBD], 3],
+        "eltM"  : [[(6, 0.15, "Labor 1"), (4.3, 0.7, "Schriftliche Prüfung"), (5.7, 0.15, "Labor 2")], [TBD], 3],
         "elstk" : [[4.2], [TBD], 3],
         "num"   : [[5.5, 3.3], [None], 3],
         "flmM"  : [[3], [TBD], 3]
@@ -255,7 +255,7 @@ def print_table_stats(total_average_grade, total_ects_positive, total_ects_negat
     if title != None:
         table = Table(title=title)
     else:
-        table = Table(title="Total Overview")
+        table = Table(title="Übersicht")
 
     # Spalten definieren
     table.add_column("TOR    ", style="bold", justify="left")
