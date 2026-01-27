@@ -46,9 +46,9 @@ sem3 = {"pro3M" : [[(5, 1, "Abgabe A"), (5, 1.5, "Abgabe B"), (5.1, 2.5, "Abgabe
         "bplan" : [[(5.8, 0.3, "Schriftliche Prüfung"), (TBD, 0.4, "Businessplan-Reasoning & Anhang"), (TBD, 0.3, "Elevator-Pitch & Q&A")], [None], 2],
         "kmk"   : [[4.8, 3.5], [None], 3],
         "eltM"  : [[(6, 0.15, "Labor 1"), (4.3, 0.7, "Schriftliche Prüfung"), (5.7, 0.15, "Labor 2")], [TBD], 3],
-        "elstk" : [[4.2], [TBD], 3],
+        "elstk" : [[4.2], [4.8], 3],
         "num"   : [[5.5, 3.3], [None], 3],
-        "flmM"  : [[3], [TBD], 3]
+        "flmM"  : [[3], [3.3], 3]
        }
 
 sem4 = {"pro4M" : [[], [None], 6],
