@@ -43,7 +43,7 @@ sem2 = {"pro2M" : [[(5.75, 0.1, "Sitzungsmoderation"), (4.5, 0.15, "Patentrecher
 
 sem3 = {"pro3M" : [[(5, 1, "Abgabe A"), (5, 1.5, "Abgabe B"), (5.1, 2.5, "Abgabe D (Einzelarbeit)"), (5, 2, "Abgabe E")], [None], 6],
         "lean"  : [[(5.8, 0.4, "Schriftliche Prüfung"), (4.9, 0.6, "Präsentation & Prozessdokumentation")], [None], 2],
-        "bplan" : [[(5.8, 0.3, "Schriftliche Prüfung"), (TBD, 0.4, "Businessplan-Reasoning & Anhang"), (TBD, 0.3, "Elevator-Pitch & Q&A")], [None], 2],
+        "bplan" : [[(5.8, 0.3, "Schriftliche Prüfung"), (5, 0.4, "Businessplan-Reasoning & Anhang"), (4.8, 0.3, "Elevator-Pitch & Q&A")], [None], 2],
         "kmk"   : [[4.8, 3.5], [None], 3],
         "eltM"  : [[(6, 0.15, "Labor 1"), (4.3, 0.7, "Schriftliche Prüfung"), (5.7, 0.15, "Labor 2")], [4], 3],
         "elstk" : [[4.2], [4.8], 3],
