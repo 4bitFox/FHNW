@@ -52,11 +52,11 @@ sem3 = {"pro3M" : [[(5, 1, "Abgabe A"), (5, 1.5, "Abgabe B"), (5.1, 2.5, "Abgabe
        }
 
 sem4 = {"pro4M" : [[(6, 1, "Abgabe A")], [None], 6],
-        "md"    : [[], [TBD], 3],
+        "md"    : [[3.6], [TBD], 3],
         "fems"  : [[], [None], 3],
         "atL"   : [[(5.2, 0.35, "Klausur 1")], [None], 3],
         "egts"  : [[(4.2, 0.5, "Fluidmechanik"), (4.8, 0.5, "Elektrotechnik")], [TBD], 3],
-        "man"   : [[], [TBD], 3],
+        "man"   : [[4.2], [TBD], 3],
         "wst"   : [[], [TBD], 3],
         "ffup"  : [[], [None], 2],
         "ereth" : [[(None, None, "Präsentation Milchersatz Pass/Fail")], [None], 2],
