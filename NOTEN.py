@@ -13,64 +13,78 @@ from rich.console import Console
 TBD = None # Platzhalter
 
 
-sem1 = {"pro1M" : [[(5.5, 0.1, "Konzeptskizze"), (5.8, 0.15, "Sitzungsprotokolle"), (4.9, 0.2, "Reflexionsbericht"), (5.3, 0.15, "Fertigungszeichnung"), (5, 0.15, "Bericht Teil: Sprachkompetenz"), (4.8, 0.15, "Bericht Teil: Konstruktion"), (5.5, 0.1, "Präsentation")], [None], 6],
-        "an1"   : [[4.6, 4.4, (5.1, 1, "Bonus +0.2 Note für Python-Aufgabe Newton-Verfahren")], [4.9], 3],
-        "mechM" : [[5, 3.5, 5], [5.2], 3],
-        "lalg1" : [[4.2, 4.7], [4.7], 3],
-        "esfss" : [[(5.58, 0.6, "Presentation"), (5.35, 0.4, "Final Exam")], [None], 2],
-        "AuA"   : [[(5.8, 0.5, "1-Minuten-Rede"), (5.2, 0.2, "Analyse Auftritt"), (4.5, 0.3, "Podium")], [None], 2],
-        "infM"  : [[(6.1, 0.5), (5.4, 0.25, "Projekt"), (5.6, 0.25, "Projekt")], [None], 3],
-        "werk"  : [[5.4, 4.8], [None], 3],
-        "ch1"   : [[4.5], [4.3], 3],
-        "hkon"  : [[(4.65, 0.5, "Teil Herstellung"), (6, 0.2, "Teil Konstruktion Peergrading Zeichnung"), (4.6, 0.3, "Teil Konstruktion")], [None], 3]
-        }
+sem1 = {
+    "pro1M" : [[(5.5, 0.1, "Konzeptskizze"), (5.8, 0.15, "Sitzungsprotokolle"), (4.9, 0.2, "Reflexionsbericht"), (5.3, 0.15, "Fertigungszeichnung"), (5, 0.15, "Bericht Teil: Sprachkompetenz"), (4.8, 0.15, "Bericht Teil: Konstruktion"), (5.5, 0.1, "Präsentation")], [None], 6],
+    "an1"   : [[4.6, 4.4, (5.1, 1, "Bonus +0.2 Note für Python-Aufgabe Newton-Verfahren")], [4.9], 3],
+    "mechM" : [[5, 3.5, 5], [5.2], 3],
+    "lalg1" : [[4.2, 4.7], [4.7], 3],
+    "esfss" : [[(5.58, 0.6, "Presentation"), (5.35, 0.4, "Final Exam")], [None], 2],
+    "AuA"   : [[(5.8, 0.5, "1-Minuten-Rede"), (5.2, 0.2, "Analyse Auftritt"), (4.5, 0.3, "Podium")], [None], 2],
+    "infM"  : [[(6.1, 0.5), (5.4, 0.25, "Projekt"), (5.6, 0.25, "Projekt")], [None], 3],
+    "werk"  : [[5.4, 4.8], [None], 3],
+    "ch1"   : [[4.5], [4.3], 3],
+    "hkon"  : [[(4.65, 0.5, "Teil Herstellung"), (6, 0.2, "Teil Konstruktion Peergrading Zeichnung"), (4.6, 0.3, "Teil Konstruktion")], [None], 3]
+}
 
 
-sem2 = {"pro2M" : [[(5.75, 0.1, "Sitzungsmoderation"), (4.5, 0.15, "Patentrecherche"), (4.8, 0.15, "Technischer Bericht Sprachkompetenz"), (4.9, 0.2, "Zeichnungssatz")], [None], 6],
-        "thdM"  : [[4.5], [3.5], 3],
-        "an2"   : [[4.9, 4, (5.06, 1, "Bonus +0.2 Note für Python-Aufgabe")], [4.3], 3],
-        "lalg2" : [[(5.2, 2), (4.7, 1)], [None], 3],
-        "chkL"  : [[(5.1, 0.25, "Chemie Schriftliche Prüfung"), (5.166, 0.125, "Chemiepräsentation"), (4.333, 0.125, "Chemie-Laborbericht"), (5, 0.5, "CADA-Challenge-und-Präsentation")], [None], 3],
-        "stk"   : [[5.18, 4.2], [None], 3],
-        "wisa"  : [[5], [None], 2],
-        "wus"   : [[3.8, 4.8], [4], 3],
-        "mel"   : [[(3.45, 1), (3.95, 1), (4.88, 1.25)], [None], 3],
-        "eidpe" : [[(6, 0.1, "Moodle Exercises"), (5.5, 0.4, "Poster and Canvas"), (4.5, 0.5, "Pitch")], [None], 2],
-        "werk2" : [[3.72], [4.9], 3],
-        "ecae"  : [[None], [None], 4] # 4 ECTS angerechnet durch C1 Zertifikat
-       }
+sem2 = {
+    "pro2M" : [[(5.75, 0.1, "Sitzungsmoderation"), (4.5, 0.15, "Patentrecherche"), (4.8, 0.15, "Technischer Bericht Sprachkompetenz"), (4.9, 0.2, "Zeichnungssatz")], [None], 6],
+    "thdM"  : [[4.5], [3.5], 3],
+    "an2"   : [[4.9, 4, (5.06, 1, "Bonus +0.2 Note für Python-Aufgabe")], [4.3], 3],
+    "lalg2" : [[(5.2, 2), (4.7, 1)], [None], 3],
+    "chkL"  : [[(5.1, 0.25, "Chemie Schriftliche Prüfung"), (5.166, 0.125, "Chemiepräsentation"), (4.333, 0.125, "Chemie-Laborbericht"), (5, 0.5, "CADA-Challenge-und-Präsentation")], [None], 3],
+    "stk"   : [[5.18, 4.2], [None], 3],
+    "wisa"  : [[5], [None], 2],
+    "wus"   : [[3.8, 4.8], [4], 3],
+    "mel"   : [[(3.45, 1), (3.95, 1), (4.88, 1.25)], [None], 3],
+    "eidpe" : [[(6, 0.1, "Moodle Exercises"), (5.5, 0.4, "Poster and Canvas"), (4.5, 0.5, "Pitch")], [None], 2],
+    "werk2" : [[3.72], [4.9], 3],
+    "ecae"  : [[None], [None], 4] # 4 ECTS angerechnet durch C1 Zertifikat
+}
 
 
-sem3 = {"pro3M" : [[(5, 1, "Abgabe A"), (5, 1.5, "Abgabe B"), (5.1, 2.5, "Abgabe D (Einzelarbeit)"), (5, 2, "Abgabe E")], [None], 6],
-        "lean"  : [[(5.8, 0.4, "Schriftliche Prüfung"), (4.9, 0.6, "Präsentation & Prozessdokumentation")], [None], 2],
-        "bplan" : [[(5.8, 0.3, "Schriftliche Prüfung"), (5, 0.4, "Businessplan-Reasoning & Anhang"), (4.8, 0.3, "Elevator-Pitch & Q&A")], [None], 2],
-        "kmk"   : [[4.8, 3.5], [None], 3],
-        "eltM"  : [[(6, 0.15, "Labor 1"), (4.3, 0.7, "Schriftliche Prüfung"), (5.7, 0.15, "Labor 2")], [4], 3],
-        "elstk" : [[4.2], [4.8], 3],
-        "num"   : [[5.5, 3.3], [None], 3],
-        "flmM"  : [[3], [3.3], 3]
-       }
+sem3 = {
+    "pro3M" : [[(5, 1, "Abgabe A"), (5, 1.5, "Abgabe B"), (5.1, 2.5, "Abgabe D (Einzelarbeit)"), (5, 2, "Abgabe E")], [None], 6],
+    "lean"  : [[(5.8, 0.4, "Schriftliche Prüfung"), (4.9, 0.6, "Präsentation & Prozessdokumentation")], [None], 2],
+    "bplan" : [[(5.8, 0.3, "Schriftliche Prüfung"), (5, 0.4, "Businessplan-Reasoning & Anhang"), (4.8, 0.3, "Elevator-Pitch & Q&A")], [None], 2],
+    "kmk"   : [[4.8, 3.5], [None], 3],
+    "eltM"  : [[(6, 0.15, "Labor 1"), (4.3, 0.7, "Schriftliche Prüfung"), (5.7, 0.15, "Labor 2")], [4], 3],
+    "elstk" : [[4.2], [4.8], 3],
+    "num"   : [[5.5, 3.3], [None], 3],
+    "flmM"  : [[3], [3.3], 3]
+}
 
-sem4 = {"pro4M" : [[(6, 1, "Abgabe A")], [None], 6],
-        "md"    : [[3.6], [TBD], 3],
-        "fems"  : [[], [None], 3],
-        "atL"   : [[(5.2, 0.35, "Klausur 1")], [None], 3],
-        "egts"  : [[(4.2, 0.5, "Fluidmechanik"), (4.8, 0.5, "Elektrotechnik")], [TBD], 3],
-        "man"   : [[4.2], [TBD], 3],
-        "wst"   : [[], [TBD], 3],
-        "ffup"  : [[], [None], 2],
-        "ereth" : [[(None, None, "Präsentation Milchersatz Pass/Fail")], [None], 2],
-        "rukg"  : [[], [None], 2],
-        "mabo"  : [[], [TBD], 3]
-       }
+sem4 = {
+    "pro4M" : [[(6, 1, "Abgabe A")], [None], 6],
+    "md"    : [[3.6], [TBD], 3],
+    "fems"  : [[3.5], [None], 3],
+    "atL"   : [[(5.2, 0.35, "Klausur 1"), (2.9, 0.35, "Klausur 2"), (TBD, 0.15, "Labor 1 Asynchronmaschine"), (TBD, 0.15, "Labor 2 Synchronmaschine")], [None], 3],
+    "egts"  : [[(4.2, 0.5, "Fluidmechanik"), (4.8, 0.5, "Elektrotechnik")], [TBD], 3],
+    "man"   : [[4.2], [TBD], 3],
+    "wst"   : [[5.7], [TBD], 3],
+    "ffup"  : [[], [None], 2],
+    "ereth" : [[(None, None, "Präsentation Milchersatz Pass/Fail")], [None], 2],
+    "rukg"  : [[], [None], 2],
+    "mabo"  : [[], [TBD], 3]
+}
 
-sem5 = {"pro5M" : [[], [None], 6]
-        # TBD
-       }
+sem5 = {
+    "pro5M" : [[], [None], 6],
+    "mea"   : [[], [None], 3],
+    "minat" : [[], [TBD], 3],
+    "dpev1" : [[], [None], 3],
+    "c1d"   : [[], [TBD], 3],
+    "naku"  : [[], [None], 3],
+    "kt1"   : [[], [None], 3],
+    "c1m"   : [[], [TBD], 3],
+    "apd"   : [[], [None], 3],
+    "dan"   : [[], [TBD], 3]
+}
 
-sem6 = {"pro6Ma": [[], [None], 12]
-        # TBD
-       }
+sem6 = {
+    "pro6Ma": [[], [None], 12]
+    # TBD
+}
 
 
 
