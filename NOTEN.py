@@ -106,7 +106,7 @@ sem4 = {
                 (5, 2, "Lieferung E")], 
                [None], 6],
     "md"    : [[3.6], [TBD], 3],
-    "fems"  : [[3.5], [None], 3],
+    "fems"  : [[3.5, 5.7], [None], 3],
     "atL"   : [[(5.2, 0.35, "Klausur 1"), 
                 (2.9, 0.35, "Klausur 2"), 
                 (5.8, 0.15, "Labor 1 Asynchronmaschine"), 
@@ -121,7 +121,7 @@ sem4 = {
     "ereth" : [[(None, None, "Präsentation Milchersatz Pass/Fail")], 
                [None], 2],
     "rukg"  : [[], [None], 2],
-    "mabo"  : [[], [TBD], 3]
+    "mabo"  : [[(5.2, 1, "4.9 + 0.3 Bonus durch Übungen")], [None], 3]
 }
 
 sem5 = {
@@ -130,12 +130,13 @@ sem5 = {
     "minat" : [[], [TBD], 3],
     "dpev1" : [[], [None], 3],
     "c1d"   : [[], [TBD], 3],
-    "naku"  : [[], [None], 3],
     "kt1"   : [[], [None], 3],
     "c1m"   : [[], [TBD], 3],
     "veva"  : [[], [None], 3],
     "apd"   : [[], [None], 3],
-    "dan"   : [[], [TBD], 3]
+    "dan"   : [[], [TBD], 3],
+    "dglM"  : [[], [TBD], 3],
+    "ChBCA1": [[], [None], 3]
 }
 
 sem6 = {
